@@ -1,0 +1,8 @@
+
+<div class="container">
+<ul class="nav nav-tabs">
+{{#nav}}
+  <li role="presentation"><a href="#{{href}}">{{title}}</a></li>
+    {{/nav}}
+</ul>
+</div>

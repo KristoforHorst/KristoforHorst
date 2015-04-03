@@ -1,0 +1,5 @@
+<ul style="list-style:none; margin-top:20px">
+{{#references}}
+    <li><h3><a href="#references-{{id}}">{{name}}</a></h3><li>
+{{/references}}
+</ul>

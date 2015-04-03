@@ -1,0 +1,5 @@
+<ul style="list-style:none; margin-top:20px">
+{{#testimonial}}
+    <li><h3><a href="#testimonial-{{id}}">{{ clientName }}</a></h3><li>
+{{/testimonial}}
+</ul>

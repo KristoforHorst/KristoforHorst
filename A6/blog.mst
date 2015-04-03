@@ -1,0 +1,7 @@
+<ol class="breadcrumb">
+  <li><a href="#blog">blog</a></li>
+  <li class="active">{{blog.title}}</li>
+</ol>
+<h1>{{ blog.headVal }}</h1>
+<h3>{{ blog.date }} </h3>
+<p>{{ blog.textField }}</p>

@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+  <li><a href="#references">references</a></li>
+  <li class="active">{{ references.name }}</li>
+</ol>
+<h1>{{ references.name }}</h1>
+<p>{{ references.email }}</p>
