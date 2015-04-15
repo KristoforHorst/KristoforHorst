@@ -1,6 +1,13 @@
 //////////////////////
+var UserObject = Parse.Object.extend("UserObject");
+var refObj = Parse.Object.extend("references");
 
 function loadReferences() {
+	
+	//
+	var refObjsAct = Parse.collections.extend({model:refObj});
+	//
+	
 $.get('references-list.mst', function(template) {
     $.getJSON(
         'http://private-3e97c-kristoforhorstguiclass2015assignment5.apiary-mock.com/applicants', 
@@ -11,10 +18,15 @@ $.get('references-list.mst', function(template) {
             var rendered = Mustache.render(template,data);
             $('#body').html(rendered);
         });
-    });
+    }); 
 }
 
 function loadReferencesByID(id) {
+	
+	//
+	var refObjAct = new Parse.query(refObj);
+	packaged = {"name" : refObjAct.get(name), "PhoneNumber" : refObjAct.get(PhoneNumber)};
+	//
 $.get('references-detail.mst', function(template) {
     $.getJSON(
         'http://private-3e97c-kristoforhorstguiclass2015assignment5.apiary-mock.com/applicants/'+id,
@@ -151,8 +163,11 @@ function validateEmail()
 		window.alert('Please enter a valid email address in the form of example@example.example');
 		else
 		{
+		var userObject = new UserObject();
+		userObject.save({"email" : email, "name" : document.getElementById("ClientName").value, "valid": true});
 		window.alert('success');
 		//changePageBackground();
+		console.log(userObject);
 		}
 	}
 
